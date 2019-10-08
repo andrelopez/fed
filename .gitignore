@@ -2,5 +2,6 @@
 /public/bundles/
 /var/
 /vendor/
+.idea
 
 !/var/database
