@@ -1,6 +1,43 @@
 @import 'variables/colors';
 @import 'variables/typography';
+@import 'variables/resolutions';
 
 body{
-  font-size: 16px;
+  font-family: "PT Serif";
+
+  nav {
+    @media screen and (min-width: 480px) {
+      ul {
+        display: flex;
+        flex-wrap:wrap;
+      }
+
+      li{
+        flex-grow:1;
+        text-align:center;
+      }
+    }
+    padding: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #000;
+    }
+    li a {
+      display: block;
+      text-decoration: none;
+      padding: .5em 1em;
+      color: #333;
+    }
+    li a:hover {
+      color: #333;
+      border: #868686 1px solid;
+    }
+  }
 }
+
+
+
