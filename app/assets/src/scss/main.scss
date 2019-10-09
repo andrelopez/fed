@@ -6,6 +6,15 @@ body{
   font-family: "PT Serif";
   font-size: 20px;
   color: $body-color;
+  .horizontal-menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    li a {
+      text-decoration: none;
+      color: $foot-text-menu;
+    }
+  }
 
   nav {
     @media screen and (min-width: $break-small) {
@@ -89,10 +98,64 @@ body{
   footer{
     bottom: 0;
     width: 100%;
-    height: 415px;
     color: #FFF;
-    background-color: #272525;
-    text-aling: center;
+    margin-top: 40px;
+    .foo-wrapper{
+      background-color: #272525;
+      padding-top: 30px;
+    }
+    .foo-content-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .foot-title{
+        padding: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 4px;
+      }
+    }
+
+    .stars{
+      padding-bottom: 15px;
+      padding-left: 10px;
+    }
+
+    .foo-content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      .foo-item{
+        width: 25%;
+      }
+    }
+
+    .horizontal-menu-text {
+      color: $foot-text-menu ;
+      font-family: "Montserrat";
+      font-size: 12px;
+    }
+    .menu-text {
+      padding-left: 8px;
+    }
+  }
+
+  .box-button{
+    margin-top: 20px;
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 270px;
+  }
+  .foo-black{
+    background-color: #222020;
+    height: 100px;
   }
 }
 
