@@ -4,8 +4,10 @@
     <div id="content">
         {% for wine in wines %}
             <div class="item">
-
-                <img class="center" src="/images/2014_te_chardonnay.png" alt="chardonnay">
+                {% for award in wine.awards %}
+                    <img class="award-index-{{ loop.index }}" src="/images/{{ award.type }}.png" alt="award">
+                {% endfor %}
+                <a href="/our-wines/{{ wine.slug }}"><img class="center" src="/images/2014_te_chardonnay.png" alt="chardonnay"></a>
                 <h3>{{ wine.title }}</h3>
                 <span>${{ wine.price }}</span>
                 {% for award in wine.awards %}

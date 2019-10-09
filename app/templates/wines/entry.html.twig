@@ -1,1 +1,84 @@
-{{ wine | json_encode }}
+{% extends "_layout.html.twig" %}
+
+{% block content %}
+    <div id="detail-content">
+
+        <div class="img-item">
+            <img class="center" src="/images/wine-big.png" alt="chardonnay">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+            {% for award in wine.awards %}
+                <img class="center" src="/images/{{ award.type  }}-white.png" alt="chardonnay">
+                {% if loop.last %}
+                    <br>
+                {% endif %}
+            {% endfor %}
+            <spam class="title">{{ wine.title }}</spam>
+            <p>{{ wine.description }}</p>
+        </div>
+
+        <div class="item border-left">
+            <div class="box-button black">{{ "Bottle"|upper }}</div>
+            <br>
+
+            <div class="text-wrapper">
+
+            {% for award in wine.awards %}
+                <p class="right-text">
+                    <b>{{ award.type|upper  }}</b> medal <br>
+                {{ award.event }}
+                </p>
+                <hr class="line">
+            {% endfor %}
+            </div>
+            <div class="price">$<span class="unit">{{ wine.price }}</span><span class="cents">.00</span></div>
+            <br>
+            <div class="cart-wrapper">
+                <div class="cart-info cart-item">
+                    <span class="qty">QTY</span>
+                    <br>
+                    <img class="center minus" src="/images/minus.png" alt="chardonnay">
+                    <span class="bottle">6btl</span>
+                    <img class="center" src="/images/plus.png" alt="chardonnay">
+                </div>
+                <div class="box-button black-float cart cart-item">{{ "Add to cart"|upper }}</div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content" class="header-section">
+        <div class="item">
+        </div>
+        <div class="item">
+            <span class="header item-center">YOU MIGHT ALSO LIKE</span>
+            <hr>
+        </div>
+        <div class="item">
+        </div>
+    </div>
+    <div id="content">
+
+        {% for wine in wines %}
+            <div class="item center">
+                {% for award in wine.awards %}
+                    <img class="award-{{ loop.index }}" src="/images/{{ award.type }}.png" alt="award">
+                {% endfor %}
+                <a href="/our-wines/{{ wine.slug }}"><img  height="238px" class="center" src="/images/2014_te_chardonnay.png" alt="chardonnay"></a>
+                <span class="detail-title">{{ wine.title }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="content" class="header-section">
+        <div class="item">
+        </div>
+        <div class="item">
+            <div class="box-button black-float-full">{{ "View all wines"|upper }}</div>
+        </div>
+        <div class="item">
+        </div>
+    </div>
+{% endblock %}

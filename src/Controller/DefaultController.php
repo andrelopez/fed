@@ -37,6 +37,8 @@ class DefaultController extends Controller
         ]);
 
         $wine = $database->query()->where('slug', '=', $slug)->first();
+        $wines = $database->findAll(true, true);
+        $firstWines = array_slice($wines, 0, 3);
 
         if ($wine === false) {
             throw $this->createNotFoundException();
@@ -46,6 +48,7 @@ class DefaultController extends Controller
             'wines/entry.html.twig',
             [
                 'wine' => $wine,
+                'wines' => $firstWines
             ]
         );
     }

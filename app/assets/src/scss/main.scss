@@ -53,6 +53,75 @@ body{
       color: $body-color;
     }
   }
+  #detail-content {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-gap: 5px;
+    justify-content: center;
+    background-color: $detail-yellow;
+
+    .detail-title{
+      padding-top: 20px;
+      font-size: 20px;
+    }
+    .title{
+      color: #fff;
+      font-size: 52px;
+      font-weight: bold;
+    }
+
+    .img-item{
+      position: absolute;
+      padding-left: 20px;
+    }
+    .item {
+      padding-top: 120px;
+      padding-left: 20px;
+      p{
+        font-size: 16px;
+        color: #272525;
+        padding-right: 30px;
+      }
+      .right-text{
+        font-family: "Montserrat";
+        font-size: 12px;
+      }
+
+      .price{
+        float: right;
+        font-size: 20px;
+        .unit{
+          font-size: 30px;
+        }
+      }
+    }
+
+    .qty{
+      font-size: 14px;
+      font-weight: bold;
+      padding-left: 30px;
+    }
+
+    .cart-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-item{
+      width: 50%;
+    }
+
+    .cart-info{
+      padding-top: 20px;
+      padding-left: 40px;
+    }
+    .border-left{
+      border-left-style: double;
+    }
+    .text-wrapper{
+      padding-top: 100px;
+    }
+  }
 
   #content{
     display: grid;
@@ -153,9 +222,94 @@ body{
     font-weight: bold;
     width: 270px;
   }
+
+  .black{
+    border: 1.5px solid $body-color;
+    width: 40%;
+    margin-left: 240px;
+    margin-top: 150px;
+  }
+
+  .black-float{
+    border: 1.5px solid $body-color;
+    width: 40%;
+  }
+
+  .black-float-full{
+    border: 1.5px solid $body-color;
+    width: 80%;
+  }
+
+  .cart{
+    margin-top: 20px;
+  }
   .foo-black{
     background-color: #222020;
     height: 100px;
+    padding-left: 30px;
+  }
+
+  .bottle{
+    font-size: 14px;
+    font-family: "Montserrat";
+    padding-bottom: 8px;
+  }
+  .minus{
+    padding-bottom: 8px;
+  }
+
+  .add-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  hr {
+    display: block;
+    width: 80%;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid $body-color;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .header{
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .item-center{
+    padding-left: 15%;
+  }
+  .header-section{
+    margin-top: 80px;
+  }
+  .award-1{
+    position: relative;
+    left: 100px;
+    top: 200px;
+    z-index: 4;
+  }
+  .award-2{
+    position: relative;
+    left: 70px;
+    top: 200px;
+    z-index: 3;
+  }
+
+  .award-index-1{
+    position: relative;
+    left: 150px;
+    top: 300px;
+    z-index: 4;
+  }
+  .award-index-2{
+    position: relative;
+    left: 120px;
+    top: 300px;
+    z-index: 3;
   }
 }
 
