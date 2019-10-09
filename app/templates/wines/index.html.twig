@@ -1,1 +1,6 @@
-{{ wines | json_encode }}
+{% extends "_layout.html.twig" %}
+
+{% block content %}
+    <h1>Hello</h1>
+    {{ wines | json_encode }}
+{% endblock %}
