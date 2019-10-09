@@ -4,17 +4,23 @@
 
 body{
   font-family: "PT Serif";
+  font-size: 20px;
+  color: $body-color;
 
   nav {
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: $break-small) {
       ul {
         display: flex;
         flex-wrap:wrap;
       }
-
       li{
         flex-grow:1;
         text-align:center;
+      }
+    }
+    @media screen and (max-width: $break-small) {
+      .navbar-image{
+        display: none;
       }
     }
     padding: 1em;
@@ -27,17 +33,38 @@ body{
       list-style: none;
       padding: 0;
       margin: 0;
-      color: #000;
     }
     li a {
       display: block;
       text-decoration: none;
       padding: .5em 1em;
-      color: #333;
+      color: $body-color;
     }
     li a:hover {
-      color: #333;
-      border: #868686 1px solid;
+      color: $body-color;
+    }
+  }
+
+  #content{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 5px;
+    justify-content: center;
+    .description{
+      font-family: "Montserrat";
+      font-size: 14px;
+    }
+    .item{
+      padding: 10px;
+    }
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: $break-small) {
+      grid-template-columns: repeat(1, 350px);
     }
   }
 }

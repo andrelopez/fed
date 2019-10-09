@@ -1,8 +1,16 @@
 {% extends "_layout.html.twig" %}
 
 {% block content %}
-    <h2>asasa</h2>
     <div id="content">
-        {{ wines | json_encode }}
+        {% for wine in wines %}
+            <div class="item">
+                <img class="center" src="/images/2014_te_chardonnay.png" alt="chardonnay">
+                <h3>{{ wine.title }}</h3>
+                <span>${{ wine.price }}</span>
+                {% for award in wine.awards %}
+                    <p class="description">{{ award.type|capitalize  }} medal, {{ award.event }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
